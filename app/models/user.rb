@@ -12,4 +12,12 @@ class User < ActiveRecord::Base
 
   # У юреза должно быть имя не длиннее 35 букв
   validates :name, presence: true, length: {maximum: 35}
+
+  before_validation :set_name, on: :create
+
+  private
+
+  def set_name
+    self.name = "Товарисч №#{rand(777)}" if self.name.blank?
+  end
 end
