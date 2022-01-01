@@ -3,9 +3,9 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 
-import Rails from "@rails/ujs"
+import Rails from "@rails/ujs";
 
-Rails.start()
+Rails.start();
 
 import '../styles/application.scss'
 const images = require.context('../images', true)
