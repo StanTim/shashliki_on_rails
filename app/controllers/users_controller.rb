@@ -12,6 +12,10 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def index
+    @users = User.all.uniq
+  end
+
   def edit
   end
 
