@@ -1,21 +1,20 @@
-# README
+# SHASHLIKI_ON_RAILS
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Funny project to provide all friends to party with shashliki
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version 2.7.4
 
-* System dependencies
+* Rails 6.1.4.4
 
-* Configuration
+* Database Postgresql
 
-* Database creation
+* Database creation: rails db:create
 
-* Database initialization
+* Database initialization rails db:migrate
 
-* How to run the test suite
+* How to run the test suite - no test now
 
 * Services (job queues, cache servers, search engines, etc.)
 
