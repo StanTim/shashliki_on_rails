@@ -11,7 +11,7 @@
 }
 
 .event-background {
-  /*background-image: url("~images/event.jpg");*/
+  /*background-image: url("../images/event_thumb.jpg");*/
   position: absolute;
   width: 100%;
   z-index: -1;
