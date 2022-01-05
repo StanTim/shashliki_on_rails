@@ -1,7 +1,8 @@
 /*
 (с) goodprogrammer.ru
+
 Наши дополнительные стили для красивого оформления плитки событий
- */
+*/
 
 .event-info {
   position: relative;
@@ -11,7 +12,7 @@
 }
 
 .event-background {
-  /*background-image: url("../images/event_thumb.jpg");*/
+  background-image: url("~images/event.jpg");
   position: absolute;
   width: 100%;
   z-index: -1;
