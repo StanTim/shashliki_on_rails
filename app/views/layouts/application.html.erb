@@ -46,14 +46,14 @@
 
     <ul class="nav">
       <% if user_signed_in? %>
-        <li><%= link_to 'Профиль', current_user, class: 'nav-link' %></li>
-        <li><%= button_to 'Выйти', destroy_user_session_path, :method => :delete, class: 'nav-link' %></li>
+        <li><%= link_to 'Профиль', current_user, class: 'btn btn-link' %></li>
+        <li><%= button_to 'Выйти', destroy_user_session_path, :method => :delete, class: 'btn btn-link' %></li>
       <% else %>
-        <li><%= link_to 'Войти', new_user_session_path, class: 'nav-link' %></li>
-        <li><%= link_to 'Зарегистрироваться', new_user_registration_path, class: 'nav-link' %></li>
+        <li><%= link_to 'Войти', new_user_session_path, class: 'btn btn-link' %></li>
+        <li><%= link_to 'Зарегистрироваться', new_user_registration_path, class: 'btn btn-link' %></li>
       <% end %>
 
-      <li><%= link_to 'Пользователи', users_path, class: 'nav-link' %></li>
+      <li><%= link_to 'Пользователи', users_path, class: 'btn btn-link' %></li>
 
     </ul>
   </div>
