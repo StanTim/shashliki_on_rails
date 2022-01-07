@@ -4,7 +4,11 @@
     <div class="card-body">
       <h5 class="card-title"><%= user.name %></h5>
       <p class="card-text">с нами с: <%= user.created_at %>"</p>
-      <a href="<%= events_path %>" class="btn btn-primary">Создал событий: <%= user.events.count %></a>
+      <% if user.events.any? %>
+        <a href="<%= user_path(user) %>" class="btn btn-link">Создал событий: <%= user.events.count %></a>
+      <% else %>
+        <p> <%= user.name %> не создал ни одного события </p>
+      <% end %>
     </div>
   <% end %>
 </div>
