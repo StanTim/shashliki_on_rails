@@ -4,7 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><%= content_for?(:title) ? yield(:title) : "Bbq" %></title>
+
+<title><%= content_for?(:title) ? yield(:title) : "Shashliki Group" %></title>
   <%= csrf_meta_tags %>
 
   <%= stylesheet_pack_tag "application", :media => "all" %>
@@ -38,38 +39,26 @@
   <![endif]-->
 </head>
 <body>
-<div class="navbar navbar-default navbar-static-top">
+<div class="navbar">
   <div class="container">
     <%# Для вывода названия приложения используем хелпер I18n.t %>
     <%= link_to t('app.Shashliki-group'), root_path, class: 'navbar-brand' %>
 
     <ul class="nav">
-      <li class="nav-item">
-        <a class="nav-link active" href="events">Active</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="users">users</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
-      </li>
-    </ul>
+      <% if user_signed_in? %>
+        <li><%= link_to 'Профиль', current_user, class: 'nav-link' %></li>
+        <li><%= button_to 'Выйти', destroy_user_session_path, :method => :delete, class: 'nav-link' %></li>
+      <% else %>
+        <li><%= link_to 'Войти', new_user_session_path, class: 'nav-link' %></li>
+        <li><%= link_to 'Зарегистрироваться', new_user_registration_path, class: 'nav-link' %></li>
+      <% end %>
 
-    <div class="navbar-collapse collapse navbar-responsive-collapse">
-      <ul class="nav navbar-nav">
-        <% if user_signed_in? %>
-          <li><%= link_to 'Профиль', current_user %></li>
-          <li><%= link_to 'Выйти', destroy_user_session_path, :method => :delete %></li>
-        <% else %>
-          <li><%= link_to 'Войти', new_user_session_path %></li>
-          <li><%= link_to 'Зарегистрироваться', new_user_registration_path %></li>
-        <% end %>
-      </ul>
-    </div>
+      <li><%= link_to 'Пользователи', users_path, class: 'nav-link' %></li>
+
+    </ul>
   </div>
+
+</div>
 </div>
 
 <div class="container">
