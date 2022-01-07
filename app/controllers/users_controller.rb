@@ -13,7 +13,7 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.all.uniq
+    @users = User.all
   end
 
   def edit

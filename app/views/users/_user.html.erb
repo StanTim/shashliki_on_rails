@@ -1,14 +1,12 @@
 <div class="card" style="width: 18rem;">
-  <% @users.each do |user| %>
-    <%= image_tag user_avatar(user) %>
-    <div class="card-body">
+  <div class="card-body">
+      <%= image_tag user_avatar(user) %>
       <h5 class="card-title"><%= user.name %></h5>
-      <p class="card-text">с нами с: <%= user.created_at %>"</p>
+      <small class="card-text">с нами с: <%= l user.created_at, format: :short %></small>
       <% if user.events.any? %>
         <a href="<%= user_path(user) %>" class="btn btn-link">Создал событий: <%= user.events.count %></a>
       <% else %>
         <p> <%= user.name %> не создал ни одного события </p>
       <% end %>
-    </div>
-  <% end %>
+  </div>
 </div>
