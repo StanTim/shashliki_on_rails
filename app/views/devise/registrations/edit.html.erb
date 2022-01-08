@@ -3,11 +3,10 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name),
              html: { method: :put, class: 'form-horizontal' }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
-
+<!--Изменение электронной почты-->
   <div class="form-group">
     <%= f.label :email, class: "col-sm-2 control-label" %><br/>
     <div class="col-sm-6">
-      <span class="input-group-text" id="basic-addon1"><i class="bi bi-envelope"></i></span>
       <%= f.email_field :email, autofocus: true, autocomplete: "email", type: "text", class: "form-control" %>
     </div>
   </div>
@@ -15,33 +14,41 @@
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
-
-  <div class="field">
+  <!--Изменение пароля-->
+  <div class="form-group">
     <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br/>
-    <%= f.password_field :password, autocomplete: "new-password" %>
-    <% if @minimum_password_length %>
-      <br/>
-      <em><%= @minimum_password_length %> characters minimum</em>
-    <% end %>
+    <div class="col-sm-6">
+      <%= f.password_field :password, autocomplete: "new-password", type: "text", class: "form-control" %>
+      <% if @minimum_password_length %>
+        <br/>
+        <em><%= @minimum_password_length %> characters minimum</em>
+      <% end %>
+    </div>
   </div>
-
-  <div class="field">
+  <!--Подтверждение изменение пароля-->
+  <div class="form-group">
     <%= f.label :password_confirmation %><br/>
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    <div class="col-sm-6">
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", type: "text", class: "form-control" %>
+    </div>
   </div>
-
-  <div class="field">
+  <!--старый пароль-->
+  <div class="form-group">
     <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br/>
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
+    <div class="col-sm-6">
+      <%= f.password_field :current_password, autocomplete: "current-password", type: "text", class: "form-control" %>
+    </div>
   </div>
-
-  <div class="actions">
-    <%= f.submit "Update" %>
+  <!--Подтверждение изменений или возврат назад-->
+  <div class="form-group">
+    <div class="col-sm-6 col-sm-offset-2"><br />
+      <%= f.submit "Change my password", class: "btn btn-primary" %>
+      <%= link_to "Back", :back, class: "btn btn-primary" %>
+    </div>
   </div>
 <% end %>
-
+<br/>
 <h3>Cancel my account</h3>
-
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+<!--Удалить аккаунт-->
+<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" },
+                          method: :delete, class: "btn btn-danger" %></p>
