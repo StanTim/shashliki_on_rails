@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title><%= content_for?(:title) ? yield(:title) : "Shashliki Group" %></title>
+  <title><%= content_for?(:title) ? yield(:title) : "Shashliki Group" %></title>
   <%= csrf_meta_tags %>
 
   <%= stylesheet_pack_tag "application", :media => "all" %>
@@ -63,13 +63,7 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-lg-9">
-      <% flash.each do |alert, value| %>
-        <div class="<%= bootstrap_flash(alert) %>">
-          <%= value %>
-        </div>
-      <% end %>
-
+    <div class="col-lg-6">
       <%= yield %>
     </div>
     <div class="col-lg-3">
