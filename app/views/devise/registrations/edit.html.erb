@@ -3,7 +3,16 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name),
              html: { method: :put, class: 'form-horizontal' }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
-<!--Изменение электронной почты-->
+
+  <!--Изменение имени пользователя-->
+  <div class="form-group">
+    <%= f.label :name, class: "col-sm-2 control-label" %><br/>
+    <div class="col-sm-6">
+      <%= f.email_field :name, autofocus: true, autocomplete: "name", type: "text", class: "form-control" %>
+    </div>
+  </div>
+
+  <!--Изменение электронной почты-->
   <div class="form-group">
     <%= f.label :email, class: "col-sm-2 control-label" %><br/>
     <div class="col-sm-6">
