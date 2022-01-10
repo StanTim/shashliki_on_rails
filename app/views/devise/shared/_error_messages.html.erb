@@ -3,7 +3,7 @@
     <ul>
       <% resource.errors.full_messages.each do |message| %>
         <div class="alert alert-warning alert-dismissible fade show" role="alert">
-          <li><%= bootstrap_flash(message) %></li>
+          <li><%= message %></li>
           <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
           </div>
       <% end %>
