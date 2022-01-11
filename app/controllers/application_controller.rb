@@ -13,9 +13,10 @@ class ApplicationController < ActionController::Base
   # параметры, связанные со сменой пароля.
   def configure_permitted_parameters
     attributes = %i[name email password password_confirmation current_password]
-    devise_parameter_sanitizer.permit(:sign_up, keys: attributes)
-    devise_parameter_sanitizer.permit(:sign_in, keys: attributes)
     devise_parameter_sanitizer.permit(:account_update, keys: attributes)
+    devise_parameter_sanitizer.permit(:sign_in) do |user_params|
+      user_params.permit(:name, :email)
+    end
   end
 
   # Вспомогательный метод, возвращает true, если текущий залогиненный юзер
