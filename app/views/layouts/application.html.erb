@@ -34,17 +34,22 @@
 </div>
 
 <div class="container">
-  <% if flash[:alert] %>
-    <% flash.each do |name, msg| %>
-      <div class="alert alert-danger alert-dismissible fade show" role="alert">
-        <strong><%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %></strong>
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-      </div>
-    <% end %>
-  <% end %>
+  <div class="row">
+    <div class="col-lg-6">
+      <% if flash %>
+        <% flash.each do |name, msg| %>
+          <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong><%= content_tag :div, msg, :id => "flash_#{name}" %></strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
   <div class="col-lg-9">
     <%= yield %>
   </div>
+
   <footer>
     <%# Для вывода названия компании используем хелпер I18n.t %>
     <p>&copy; <%= t 'app.Stanislav A Timanoff' %> 2022</p>
