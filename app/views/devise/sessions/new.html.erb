@@ -4,14 +4,14 @@
              html: { class: "form-horizontal" }) do |f| %>
 
   <div class="form-group">
-    <%= f.label :email, class: "col-sm-2 control-label" %><br/>
+    <%= f.label :email, class: "col-form-label mb-1" %><br/>
     <div class="col-sm-6">
       <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
     </div>
   </div>
 
   <div class="form-group">
-    <%= f.label :password, class: "col-sm-2 control-label" %><br/>
+    <%= f.label :password, class: "col-form-label mb-1" %><br/>
     <div class="col-sm-6">
       <%= f.password_field :password, autocomplete: "current-password", class: "form-control" %>
     </div>
@@ -19,14 +19,14 @@
 
   <% if devise_mapping.rememberable? %>
     <div class="form-group">
-      <div class="col-sm-6 col-sm-offset-2">
+      <div class="col-sm-6 col-sm-offset-4"><br/>
         <%= f.check_box :remember_me %>
-        <%= f.label :remember_me %>
+        <%= f.label :remember_me %><br/>
       </div>
     </div>
   <% end %>
 
-  <div class="actions">
+  <div class="actions"><br/>
     <%= f.submit "Log in", class: 'btn btn-primary' %>
   </div>
 <% end %>

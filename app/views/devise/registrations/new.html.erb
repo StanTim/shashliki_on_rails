@@ -5,14 +5,14 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="form-group">
-    <%= f.label :email, class: "col-sm-2 control-label" %>
+    <%= f.label :email, class: "col-form-label mb-1", style: "thumbnail-inner" %>
     <div class="col-sm-6">
       <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
     </div>
   </div>
 
   <div class="form-group">
-    <%= f.label :password, class: "col-sm-2 control-label" %>
+    <%= f.label :password, class: "col-form-label mb-1" %>
     <% if @minimum_password_length %>
       <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br/>
@@ -22,21 +22,21 @@
   </div>
 
   <div class="form-group">
-    <%= f.label :password_confirmation, class: "col-sm-2 control-label" %><br/>
+    <%= f.label :password_confirmation, class: "col-form-label mb-1" %><br/>
     <div class="col-sm-6">
       <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
     </div>
   </div>
 
   <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-6"><br/>
+    <div class="col-sm-offset-4 col-sm-6"><br/>
       <%= f.submit "Sign up", class: "btn btn-primary" %>
     </div>
   </div>
 <% end %>
 
 <div class="form-group">
-  <div class="col-sm-offset-2 col-sm-6">
+  <div class="col-sm-offset-2 col-sm-6"><br/>
     <%= render "devise/shared/links", class: "btn btn-primary" %>
   </div>
 </div>
