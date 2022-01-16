@@ -43,4 +43,3 @@ ru:
     one: '%{count} собака'
     few: '%{count} собаки'
     many: '%{count} собак'
-
