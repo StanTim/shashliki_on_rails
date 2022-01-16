@@ -4,6 +4,13 @@ ru:
     few: '%{count} события'
     many: '%{count} событий'
 
+  characters:
+    one: '%{count} символ'
+    few: '%{count} символа'
+    many: '%{count} символов'
+
+  minimum: 'минимум'
+
   time:
     formats:
       short: '%d-%m-%Y %H:%M:%S'
