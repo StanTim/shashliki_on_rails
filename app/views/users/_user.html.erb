@@ -4,7 +4,7 @@
       <h5 class="card-title"><%= user.name %></h5>
       <small class="card-text">с нами с: <%= l user.created_at, format: :short %></small>
       <% if user.events.any? %>
-        <a href="<%= user_path(user) %>" class="btn btn-link">Создал событий: <%= user.events.count %></a>
+        <a href="<%= user_path(user) %>" class="btn btn-link">Создал <%= I18n.t :event, count: user.events.count %></a>
       <% else %>
         <p> <%= user.name %> не создал ни одного события </p>
       <% end %>
