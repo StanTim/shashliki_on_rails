@@ -1,2 +1,6 @@
 ru:
   hello: 'Привет ,мир!'
+
+  time:
+    formats:
+      short: "%d-%m-%Y %H:%M:%S"
