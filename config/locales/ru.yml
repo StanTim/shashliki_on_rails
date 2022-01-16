@@ -1,9 +1,12 @@
 ru:
-  hello: 'Привет ,мир!'
+  event:
+    one: '%{count} событие'
+    few: '%{count} события'
+    many: '%{count} событий'
 
   time:
     formats:
-      short: "%d-%m-%Y %H:%M:%S"
+      short: '%d-%m-%Y %H:%M:%S'
 
   # Перевод моделей
   activerecord:
@@ -38,8 +41,3 @@ ru:
   app:
     name: 'Шашлыки групп'
     company: 'Станислав Тиманов'
-
-  dog:
-    one: '%{count} собака'
-    few: '%{count} собаки'
-    many: '%{count} собак'
