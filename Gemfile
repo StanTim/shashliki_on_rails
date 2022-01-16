@@ -6,7 +6,7 @@ ruby '2.7.4'
 gem 'devise'
 gem 'devise-i18n'
 
-gem 'rails-i18n'
+gem 'rails-i18n', '~> 6.0'
 
 gem 'rails', '~> 6.1.4', '>= 6.1.4.4'
 gem 'pg', '~> 1.1'
