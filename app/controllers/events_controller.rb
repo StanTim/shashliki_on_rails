@@ -29,8 +29,6 @@ class EventsController < ApplicationController
     @event = current_user.events.build(event_params)
 
     if @event.save
-      # Используем сообщение из файла локалей ru.yml
-      # controllers -> events -> created
       redirect_to @event, notice: I18n.t('controllers.events.created')
     else
       render :new
@@ -52,10 +50,7 @@ class EventsController < ApplicationController
 
   private
 
-  def set_current_user_event
-    @event = current_user.events.find(params[:id])
-  end
-
+  # Use callbacks to share common setup or constraints between actions.
   def set_event
     @event = Event.find(params[:id])
   end
