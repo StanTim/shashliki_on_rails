@@ -38,3 +38,9 @@ ru:
   app:
     name: 'Шашлыки групп'
     company: 'Станислав Тиманов'
+
+  dog:
+    one: '%{count} собака'
+    few: '%{count} собаки'
+    many: '%{count} собак'
+
