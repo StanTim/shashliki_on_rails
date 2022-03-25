@@ -1,0 +1,10 @@
+<h1><%= t("users") %></h1>
+
+<div class="buffer-both">
+  <%= link_to t("sign_in"), new_user_session_path, class: "btn btn-success" if @current_user.nil? %>
+</div>
+
+<div class="row buffer-bottom">
+  <!-- Рендерим список пользователей -->
+  <%= render @users %>
+</div>

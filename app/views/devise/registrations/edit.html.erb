@@ -1,0 +1,71 @@
+<h2><%= t(".title", resource: resource.model_name.human) %></h2>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name),
+             html: { method: :put, class: 'form-horizontal' }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+  <%= f.hidden_field :reset_password_token %>
+
+  <!--Изменение имени пользователя-->
+  <div class="form-group">
+    <%= f.label :name, class: "col-sm-2 control-label" %><br/>
+    <div class="col-sm-6">
+      <%= f.text_field :name, autofocus: true, autocomplete: "name", type: "text", class: "form-control" %>
+    </div>
+  </div>
+
+  <!--Изменение электронной почты-->
+  <div class="form-group">
+    <%= f.label :email, class: "col-sm-2 control-label" %><br/>
+    <div class="col-sm-6">
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", type: "text", class: "form-control" %>
+    </div>
+  </div>
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div><%= t(".currently_waiting_confirmation_for_email", email: resource.unconfirmed_email) %></div>
+  <% end %>
+
+  <!--  загрузка аватарки -->
+  <div class="form-group">
+    <%= f.label :avatar %>
+    <p><%= image_tag(@user.avatar.thumb.url) if @user.avatar? %></p>
+    <%= f.file_field :avatar %>
+  </div>
+
+  <!--Изменение пароля-->
+  <div class="form-group">
+    <%= f.label :password %> <i><%= t('.leave_blank_if_you_don_t_want_to_change_it') %></i><br/>
+    <div class="col-sm-6">
+      <%= f.password_field :password, autocomplete: I18n.t("new-password"), type: "text", class: "form-control" %>
+      <em><%= show_min_pass_characters %></em>
+    </div>
+  </div>
+
+  <!--старый пароль-->
+  <div class="form-group">
+    <%= f.label :current_password %> <i><%= t(".we_need_your_current_password_to_confirm_your_changes") %></i><br/>
+    <div class="col-sm-6">
+      <%= f.password_field :current_password, autocomplete: t("current-password"), type: "text", class: "form-control" %>
+    </div>
+  </div>
+
+  <!--Подтверждение изменение пароля-->
+  <div class="form-group">
+    <%= f.label :password_confirmation %><br/>
+    <div class="col-sm-6">
+      <%= f.password_field :password_confirmation, autocomplete: t("new-password"), type: "text", class: "form-control" %>
+    </div>
+  </div>
+
+  <!--Подтверждение изменений или возврат назад-->
+  <div class="form-group">
+    <div class="col-sm-6 col-sm-offset-2"><br/>
+      <%= f.submit t(".update"), class: "btn btn-primary" %>
+      <%= link_to t("devise.shared.links.back"), :back, class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>
+<br/>
+<h3><%= t(".cancel_my_account") %></h3>
+<!--Удалить аккаунт-->
+<p> <%= t(".unhappy") %><%= button_to t(".cancel_my_account"), registration_path(resource_name), data: { confirm: t(".are_you_sure") },
+                                      method: :delete, class: "btn btn-danger" %></p>

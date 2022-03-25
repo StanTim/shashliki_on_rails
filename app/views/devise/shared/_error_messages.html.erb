@@ -1,0 +1,17 @@
+<% if resource.errors.any? %>
+  <div id="error_explanation alert-dismissible fade show col-sm-6" role="alert">
+    <div class="alert alert-warning alert-dismissible fade show col-sm-6" role="alert">
+      <strong>
+        <%= I18n.t("errors.messages.not_saved",
+                   count: resource.errors.count,
+                   resource: resource.class.model_name.human.downcase)
+        %>
+      </strong>
+      <ul>
+        <% resource.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+<% end %>

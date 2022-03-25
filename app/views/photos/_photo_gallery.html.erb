@@ -1,0 +1,21 @@
+<div class="row justify-content-center">
+  <div class="col-md-12">
+    <div class="row">
+      <% @event.photos.each do |photo| %>
+        <div class="item col-sm-6 col-md-3 mb-3">
+          <%= link_to(image_tag(photo.photo.url, class: "img-fluid"), photo.photo.url,
+                      data: { lightbox: "roadtrip"}) %>
+
+          <% if current_user_can_edit?(photo) %>
+            <%= link_to(fa_icon('trash'), event_photo_path(photo.event, photo),
+                        method: :delete,
+                        fa_icon: "trash",
+                        data: { confirm: t('controllers.photos.delete_photo') }) %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<%= javascript_pack_tag 'lightbox' %>

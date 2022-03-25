@@ -1,0 +1,23 @@
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <%= image_tag user_avatar_thumb(user) %>
+    <h5 class="card-title"><%= user.name %></h5>
+    <small class="card-text"><%= "#{t("whith_us_from")} #{l(user.created_at, format: :long)}" %></small>
+    <% if user.events.any? %>
+      <p><%= link_to "#{t("organized")}: #{t(:event, count: user.events.count)}",
+                     user_path(user),
+                     class: "btn btn-link" %></p>
+    <% else %>
+      <p> <%= user.name %> <%= t("have_not_any_events") %></p>
+    <% end %>
+
+    <span class="user-name">
+    <% if request.path == user_path(user) %>
+      <%= user.name %>
+    <% else %>
+      <%= link_to user.name, user_path(user) %>
+    <% end %>
+  </span>
+
+  </div>
+</div>

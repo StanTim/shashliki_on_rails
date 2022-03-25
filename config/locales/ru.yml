@@ -1,0 +1,148 @@
+ru:
+  show:
+    delete_event: 'Удалить мероприятие'
+    edit: "Редактировать"
+
+  event: "Событие"
+
+  characters:
+    one: '%{count} символ'
+    few: '%{count} символа'
+    many: '%{count} символов'
+
+  error:
+    one: '%{count} ошибка'
+    few: '%{count} ошибки'
+    many: '%{count} ошибок'
+
+  time:
+    formats:
+      default: "%Y-%m-%d"
+      short: "%d %b"
+      long: "%d %B, %Y"
+
+  account: 'Профиль'
+  are_you_sure: 'Вы уверены?'
+  back: 'назад'
+  body: 'комментарий'
+  delete_event: 'Удалить событие'
+  delete: 'Удалить'
+  edit: 'Редактировать'
+  edit_event: 'Редактировать событие'
+  edit_user: 'Редактировать профиль'
+  events: 'События'
+  event_new: 'Новое событие'
+  have_not_any_events: 'не создал событий'
+  I will be going: 'пойду:'
+  organized: 'Организовал:'
+  or: 'или'
+  registration: 'Регистрация'
+  save: 'Сохранить'
+  send: 'Отправить'
+  sign_out: 'Выход'
+  sign_in: 'Вход'
+  sign_in_with: 'Вход через'
+  sign_up: 'Регистрация'
+  subscribe: 'Подписаться'
+  They will come: 'Придут'
+  users: 'Пользователи'
+  user_name: 'имя'
+  whith_us_from: 'с нами с'
+  who is calling: 'Зовёт'
+  Pincode: 'Пин-код'
+
+
+  # Перевод моделей
+  activerecord:
+    # Перевод названия моделей
+    errors:
+      messages:
+        decline_self_subscription: 'Подписка на собственное событие запрещена!'
+        email_in_use: 'email уже используется!'
+
+    models:
+      comment: 'Комментарий'
+      event: 'Событие'
+      photo: 'Фотография'
+      subscription: 'Подписка'
+      user: 'Пользователь'
+
+      # Перевод атрибутов моделей
+    attributes:
+      user:
+        avatar: 'Аватарка'
+        email: 'Email'
+        name: 'Имя'
+        password: 'Пароль'
+        password_confirmation: 'Подтверждение пароля'
+      event:
+        title: 'Название'
+        address: 'Место проведения'
+        datetime: 'Дата и время'
+        description: 'Описание'
+        pincode: 'Пин-код доступа'
+        input: 'Ввод'
+        with pin code only: 'Доступ только по пин-коду'
+      comment:
+        body: 'Комментарий'
+        destroy_confirm: 'Вы уверены, что хотите удалить этот комментарий?'
+        user_name: 'Имя'
+        send: 'отправить'
+      photo:
+        photo: 'Фотография'
+        datetime: 'Дата и время'
+      subscription:
+        destroy_confirm: 'Вы уверены, что хотите удалить эту подписку?'
+        title: 'Новая подписка'
+        name: 'Имя'
+        email: 'Email'
+        author: 'Автор'
+        event: 'Событие'
+        datetime: 'Состоится'
+        owner: 'Организатор'
+      event_mailer:
+        comment:
+          title: 'Новый комментарий'
+          author: 'Автор'
+          event: 'Событие'
+          datetime: 'Состоится'
+          owner: 'Организатор'
+        photo:
+          datetime: 'Добавлено'
+          photo: 'Фотография'
+
+  # Перевод сообщений, которые отправляет контроллер
+  controllers:
+    events:
+      created: 'Вы создали новое мероприятие'
+      updated: 'Вы обновили мероприятие'
+      destroyed: 'Вы удалили мероприятие :('
+      wrong_pincode: 'Неверный пинкод!'
+    comments:
+      body: "Комментарий"
+      created: 'Ваш комментарий добавлен'
+      destroyed: 'Комментарий удален'
+      error: 'Ошибка с комментарием'
+    photos:
+      error: 'Что-то не так с фоткой'
+      created: 'Вы добавили фотографию к событию'
+      delete_photo: 'Удалить фотографию'
+      destroyed: 'Вы удалили фотку'
+    subscriptions:
+      created: 'Вы подписаны на это событие'
+      destroyed: 'Участник отписан'
+      error: 'Подписка/отписка не сработала'
+    users:
+      updated: 'Вы обновили свой профиль'
+
+  # Перевод названия приложения и компании-разработчика
+  app:
+    name: 'Группа шашлыков'
+    user_name: "Имя"
+    user_email: "email"
+
+  datetime: "Запланировано"
+  owner: "Организатор"
+  author: "Загрузил"
+  New image: "Новое изображение"
+  new_subscription: "Новый подписчик"
