@@ -15,6 +15,7 @@ gem 'carrierwave', '~> 2.0'
 gem 'rmagick', '~> 4.2', '>= 4.2.3'
 gem 'fog-aws'
 gem 'sendgrid-ruby'
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.2'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
