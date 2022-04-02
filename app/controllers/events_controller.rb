@@ -1,6 +1,3 @@
-# (с) goodprogrammer.ru
-#
-# Контроллер, управляющий событиями
 class EventsController < ApplicationController
   # Встроенный в девайз фильтр - посылает незалогиненного пользователя
   before_action :authenticate_user!, except: [:show, :index]

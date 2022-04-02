@@ -24,7 +24,7 @@ module ApplicationHelper
     if photos.any?
       photos.sample.photo.url
     else
-      asset_pack_path('media/images/event_thumb.jpg')
+      asset_pack_path('media/images/event.jpg')
     end
   end
 

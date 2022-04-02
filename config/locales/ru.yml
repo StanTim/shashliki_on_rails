@@ -89,6 +89,7 @@ ru:
         user_name: 'Имя'
         send: 'отправить'
       photo:
+        added_by: 'Загружено:'
         photo: 'Фотография'
         datetime: 'Дата и время'
       subscription:

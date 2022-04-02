@@ -34,14 +34,16 @@
     </div>
   </div>
 
-  <%= render 'photos/photo_gallery', collection: @event.photos.except(@new_photo) if @event.photos.any? %>
+  <% if @event.photos.any? %>
+  <%= render "photos/photo_gallery", collection: @event.photos.except(@new_photo) %>
+  <% end %>
 
   <script src="https://api-maps.yandex.ru/2.1/?apikey=<%= Rails.application.credentials.ya_map_api_key! %>&lang=ru_RU"
           type="text/javascript"></script>
 
   <div id="map" data-address="<%= @event.address %>">
     <%= javascript_pack_tag "map" %>
-  </div>``
+  </div>
 
   <div class="row">
     <div class="col-md-4">

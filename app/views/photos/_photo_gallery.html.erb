@@ -1,21 +1,25 @@
 <div class="row justify-content-center">
   <div class="col-md-12">
     <div class="row">
-      <% @event.photos.each do |photo| %>
+      <% @event.photos.shuffle.each do |photo| %>
         <div class="item col-sm-6 col-md-3 mb-3">
-          <%= link_to(image_tag(photo.photo.url, class: "img-fluid"), photo.photo.url,
-                      data: { lightbox: "roadtrip"}) %>
+          <span class="small">
+            <% if current_user_can_edit?(photo) %>
+         <%= link_to(fa_icon("trash"), event_photo_path(photo.event, photo),
+                     method: :delete, data: { confirm: t('controllers.photos.delete_photo') }) %>
 
-          <% if current_user_can_edit?(photo) %>
-            <%= link_to(fa_icon('trash'), event_photo_path(photo.event, photo),
-                        method: :delete,
-                        fa_icon: "trash",
-                        data: { confirm: t('controllers.photos.delete_photo') }) %>
           <% end %>
+            <%= link_to t('activerecord.attributes.photo.added_by'), user_path(photo.user) %>
+            <%= link_to(image_tag(user_avatar_thumb(photo.user), class: 'img-icon',
+                                  alt: "#{photo.user.name}") + "#{photo.user.name}", user_path(photo.user)) %>
+            <%= link_to(image_tag(photo.photo.url, class: "img-fluid"), photo.photo.url,
+                        data: { toggle: "lightbox", gallery: "example-gallery" }) %>
+          </span>
         </div>
       <% end %>
     </div>
   </div>
 </div>
 
-<%= javascript_pack_tag 'lightbox' %>
+<%= javascript_pack_tag 'index' %>
+
