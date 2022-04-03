@@ -63,7 +63,7 @@ ru:
     models:
       comment: 'Комментарий'
       event: 'Событие'
-      photo: 'Фотография'
+      photo: 'Фото'
       subscription: 'Подписка'
       user: 'Пользователь'
 

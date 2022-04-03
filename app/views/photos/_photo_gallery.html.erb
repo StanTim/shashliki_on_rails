@@ -1,13 +1,14 @@
 <div class="row justify-content-center">
   <div class="col-md-12">
     <div class="row">
-      <% @event.photos.shuffle.each do |photo| %>
+      <% @event.photos.shuffle.each.with_index(1) do |photo, index| %>
         <div class="item col-sm-6 col-md-3 mb-3">
           <div class="small">
             <%= link_to(image_tag(photo.photo.url, class: "img-fluid"), photo.photo.url,
                         data: { lightbox: "roadtrip",
                                 title: "#{ t('activerecord.attributes.photo.added_by')}
-                                #{photo_title(photo)} #{delete_photo_link_with_icon(photo)}" }) %>
+                                #{photo_title(photo)} #{delete_photo_link_with_icon(photo)}
+                                #{t("activerecord.models.photo")} #{index} / #{@event.photos.count}" }) %>
           </div>
         </div>
       <% end %>
