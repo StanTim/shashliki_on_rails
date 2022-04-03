@@ -4,14 +4,10 @@
       <% @event.photos.shuffle.each do |photo| %>
         <div class="item col-sm-6 col-md-3 mb-3">
           <div class="small">
-            <%= link_to t('activerecord.attributes.photo.added_by'), user_path(photo.user) %>
-            <%= link_to(image_tag(user_avatar_thumb(photo.user), class: 'img-icon',
-                                  alt: "#{photo.user.name}") + "#{photo.user.name}", user_path(photo.user)) %>
-            <% if current_user_can_edit?(photo) %>
-              <%= link_to(image_tag(asset_pack_path('media/images/trash-10-16.png')), event_photo_path(photo.event, photo),
-                          method: :delete, data: { confirm: t('controllers.photos.delete_photo') }) %>
-            <% end %>
-            <%= link_to(image_tag(photo.photo.url, class: "img-fluid"), photo.photo.url, data: { lightbox: "roadtrip"}) %>
+            <%= link_to(image_tag(photo.photo.url, class: "img-fluid"), photo.photo.url,
+                        data: { lightbox: "roadtrip",
+                                title: "#{ t('activerecord.attributes.photo.added_by') +
+                                  + photo_title(photo) + " " + delete_photo_link_with_icon(photo)}" }) %>
           </div>
         </div>
       <% end %>
