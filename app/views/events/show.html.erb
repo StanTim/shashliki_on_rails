@@ -34,11 +34,9 @@
     </div>
   </div>
 
-  <% if @event.photos.any? %>
-  <%= render "photos/photo_gallery", collection: @event.photos.except(@new_photo) %>
-  <% end %>
+  <%= render "photos/photo_gallery", collection: @event.photos.except(@new_photo) if @event.photos.any? %>
 
-  <script src="https://api-maps.yandex.ru/2.1/?apikey=<%= Rails.application.credentials[Rails.env.to_sym][:ya_map_api_key] %>&lang=ru_RU"
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=<%= Rails.application.credentials.ya_map_api_key %>&lang=ru_RU"
           type="text/javascript"></script>
 
   <div id="map" data-address="<%= @event.address %>">
