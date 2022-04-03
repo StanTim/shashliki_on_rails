@@ -6,8 +6,8 @@
           <div class="small">
             <%= link_to(image_tag(photo.photo.url, class: "img-fluid"), photo.photo.url,
                         data: { lightbox: "roadtrip",
-                                title: "#{ t('activerecord.attributes.photo.added_by') +
-                                  + photo_title(photo) + " " + delete_photo_link_with_icon(photo)}" }) %>
+                                title: "#{ t('activerecord.attributes.photo.added_by')}
+                                #{photo_title(photo)} #{delete_photo_link_with_icon(photo)}" }) %>
           </div>
         </div>
       <% end %>
