@@ -129,6 +129,7 @@ ru:
       created: 'Вы добавили фотографию к событию'
       delete_photo: 'Удалить фотографию'
       destroyed: 'Вы удалили фотку'
+      upload: "Загрузить"
     subscriptions:
       created: 'Вы подписаны на это событие'
       destroyed: 'Участник отписан'
